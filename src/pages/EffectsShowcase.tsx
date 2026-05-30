@@ -16,6 +16,7 @@ interface Effect {
 
 const EffectsShowcase = () => {
   const [selectedEffect, setSelectedEffect] = useState<Effect | null>(null);
+  const YOUTUBE_CHANNEL = "@beatkulturesa";
 
   const effects: Effect[] = [
     {
@@ -29,7 +30,7 @@ const EffectsShowcase = () => {
         "Customizable colors for any theme",
         "Energizes the dance floor"
       ],
-      youtubeId: "YOUR_UPLIGHTING_VIDEO_ID",
+      youtubeId: YOUTUBE_CHANNEL,
       icon: "💡"
     },
     {
@@ -43,7 +44,7 @@ const EffectsShowcase = () => {
         "Synchronizes with music",
         "Professional entertainment grade"
       ],
-      youtubeId: "YOUR_LASER_VIDEO_ID",
+      youtubeId: YOUTUBE_CHANNEL,
       icon: "🔴"
     },
     {
@@ -57,7 +58,7 @@ const EffectsShowcase = () => {
         "Fills the dance floor",
         "Professional event standard"
       ],
-      youtubeId: "YOUR_SMOKE_VIDEO_ID",
+      youtubeId: YOUTUBE_CHANNEL,
       icon: "☁️"
     },
     {
@@ -71,7 +72,7 @@ const EffectsShowcase = () => {
         "Cools the venue",
         "Highly visual with lighting"
       ],
-      youtubeId: "YOUR_LOWFOG_VIDEO_ID",
+      youtubeId: YOUTUBE_CHANNEL,
       icon: "❄️"
     },
     {
@@ -85,7 +86,7 @@ const EffectsShowcase = () => {
         "Professional lighting effect",
         "Customizable speeds and patterns"
       ],
-      youtubeId: "YOUR_STROBE_VIDEO_ID",
+      youtubeId: YOUTUBE_CHANNEL,
       icon: "⚡"
     },
     {
@@ -99,7 +100,7 @@ const EffectsShowcase = () => {
         "Fully programmable",
         "Creates spotlight effects"
       ],
-      youtubeId: "YOUR_MOVINGHEAD_VIDEO_ID",
+      youtubeId: YOUTUBE_CHANNEL,
       icon: "🎬"
     }
   ];
@@ -143,18 +144,13 @@ const EffectsShowcase = () => {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 {/* Video Section */}
                 <div>
-                  <div className="aspect-video bg-black rounded-lg overflow-hidden mb-4">
-                    <iframe
-                      width="100%"
-                      height="100%"
-                      src={`https://www.youtube.com/embed/${selectedEffect.youtubeId}`}
-                      title={selectedEffect.name}
-                      frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                    />
+                  <div className="aspect-video bg-black rounded-lg overflow-hidden mb-4 flex items-center justify-center">
+                    <div className="text-center">
+                      <p className="text-white text-lg mb-4">YouTube Channel Content</p>
+                      <p className="text-gray-300">Visit our channel for all effect demonstrations</p>
+                    </div>
                   </div>
-                  <p className="text-sm text-muted-foreground">Watch tutorial and examples on YouTube</p>
+                  <p className="text-sm text-muted-foreground">Watch tutorials and examples on YouTube</p>
                 </div>
 
                 {/* Details Section */}
@@ -176,19 +172,13 @@ const EffectsShowcase = () => {
                     ))}
                   </ul>
 
-                  {selectedEffect.youtubeId.startsWith('YOUR_') ? (
-                    <Button disabled className="w-full" variant="outline">
-                      Video Coming Soon
-                    </Button>
-                  ) : (
-                    <Button
-                      className="w-full gap-2"
-                      onClick={() => window.open(`https://www.youtube.com/watch?v=${selectedEffect.youtubeId}`, '_blank')}
-                    >
-                      <ExternalLink className="w-4 h-4" />
-                      View Full Video on YouTube
-                    </Button>
-                  )}
+                  <Button
+                    className="w-full gap-2"
+                    onClick={() => window.open(`https://www.youtube.com/${selectedEffect.youtubeId}`, '_blank')}
+                  >
+                    <ExternalLink className="w-4 h-4" />
+                    Visit BeatKulture YouTube Channel
+                  </Button>
                 </div>
               </div>
             </Card>
