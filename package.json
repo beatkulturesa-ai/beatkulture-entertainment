@@ -1,0 +1,23 @@
+{
+  "name": "primary",
+  "version": "1.0.0",
+  "description": "![License](https://img.shields.io/badge/License-MIT-blue.svg) ![Status](https://img.shields.io/badge/Status-Production%20Ready-green.svg)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/beatkulturesa-ai/beatkulture-entertainment.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/beatkulturesa-ai/beatkulture-entertainment/issues"
+  },
+  "homepage": "https://github.com/beatkulturesa-ai/beatkulture-entertainment#readme",
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1"
+  }
+}
